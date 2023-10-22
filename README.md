@@ -205,7 +205,7 @@ This tutorial outlines how to set up a Virtual Machine Network in Microsoft Azur
       <img width="600" alt="ssh login VM-2" src="https://github.com/landonbmartin/vm-network/assets/148168629/530c0f50-6b47-40de-823e-c9513219f429">
     </ul>
     </br>
-    <li>Typing in commands such as <i>username</i>,<i>pwd</i>, or <i>sudo apt</i> will display traffic on Wireshark, you can filter ssh traffic in Wireshark by typing in <b>ssh</b> in the filter bar</li>
+    <li>Typing in commands such as <i>username</i>, <i>pwd</i>, or <i>sudo apt</i> will display traffic on Wireshark, you can filter ssh traffic in Wireshark by typing in <b>ssh</b> in the filter bar</li>
   </ul>
 </p>
 
