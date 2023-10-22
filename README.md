@@ -136,6 +136,43 @@ This tutorial outlines how to set up a Virtual Machine Network in Microsoft Azur
 <p>
   <ul>
     <li>Fist, download <a href="https://www.wireshark.org/download.html">Wireshark</a> in your Windows VM. Downloads may be <i>slow</i> depending on your VM's CPU</li>
+    <ul>
+    <br>
+      <img width="800" alt="Download Wireshark" src="https://github.com/landonbmartin/vm-network/assets/148168629/e42476bd-f4a7-42a5-8943-169b25806f0a">
+    </ul>
+    </br>
   </ul>
 </p>
 
+<br />
+
+<h3>Oberving ICMP (Internet Control Message Protocol) Traffic</h3>
+
+<p>
+  <ul>
+    <li>Once installed, open Wireshark and start capturing packets (the blue fin icon). In the filter bar, type <b>icmp</b> to filter incoming ICMP packets</li>
+    <ul>
+    <br>
+      <img width="700" alt="icmp filter" src="https://github.com/landonbmartin/vm-network/assets/148168629/622cd83d-948d-4149-b500-0755d2b50963">
+    </ul>
+    </br>
+    <li>Head back to the physical desktop, head to the Microsoft Azure Account to obtain the <b>Private IP Address</b> of VM-2 and copy it</li>
+    <ul>
+    <br>
+      <img width="600" alt="VM-2 Private IP Address" src="https://github.com/landonbmartin/vm-network/assets/148168629/748276ed-7888-463d-a54c-1de49cc38838">
+    </ul>
+    </br>
+    <li>Open up <b>Windows Powershell</b> in VM-1 and in the command line enter <b>ping</b> and the private IP of VM-2. Once done, ICMP packets should now display in Wireshark</li>
+    <ul>
+    <br>
+      <img width="1200" alt="icmp ping VM-2" src="https://github.com/landonbmartin/vm-network/assets/148168629/f0d284f5-92d9-4a7e-a454-c978a2731183">
+    </ul>
+    </br>
+    <li>Now start a perpetual / non-stop ping between the Virtual Machines by entering <b>ping</b> then the private IP of VM-2 followed by <b>-t</b> causing nonstop ICMP packets displaying in Wireshark</li>
+    <ul>
+    <br>
+      <img width="1200" alt="icmp ping VM-2 -t" src="https://github.com/landonbmartin/vm-network/assets/148168629/67989437-b779-4be6-9889-606c5d726d5e">
+    </ul>
+    </br>
+  </ul>
+</p>
