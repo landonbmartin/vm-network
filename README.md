@@ -174,5 +174,77 @@ This tutorial outlines how to set up a Virtual Machine Network in Microsoft Azur
       <img width="1200" alt="icmp ping VM-2 -t" src="https://github.com/landonbmartin/vm-network/assets/148168629/67989437-b779-4be6-9889-606c5d726d5e">
     </ul>
     </br>
+    <li>Head back to the Microsoft Azure Account and go to the VM-2's <b>Network Security Group (NSG)</b> (which should be named <i>VM-2nsg</i> in order to halt the traffic</li>
+    <li>In VM-2-nsg, go to <b>inbound security rules</b> and create a security rule that denies ICMPs. Click on <b>Add</b> to open a right side pop up to set the rule and dot in <b>Deny</b> under action and <b>ICMP</b> under Protocol. Set the priority higher than 300 (priorities are inversely proportional meaning lower number have higher priority) and name the rule <b>DENY_ICMP_PING</b> then click <b>Add</b> to finish</li>
+    <ul>
+    <br>
+      <img width="1200" alt="Firewall icmp ping" src="https://github.com/landonbmartin/vm-network/assets/148168629/c560f4b5-7b71-4b27-ba37-0e67bfa0d116">
+    </ul>
+    </br>
+    <li>Once completed, notice the message "Request timed out" will start displaying in Powershell in VM-1, meaning ICMP ping has been halted from the security rule</li>
+    <ul>
+    <br>
+      <img width="500" alt="Deny icmp ping timed out" src="https://github.com/landonbmartin/vm-network/assets/148168629/f9ce38ac-9c6a-464d-b7e0-8e0d4a74f0dc">
+    </ul>
+    </br>
+    <li>To reinstate the traffic, simply head back to the Microsoft Azure Account and set the DENY_ICMP_PING inbound rule's action to <b>Allow</b> and save</li>
   </ul>
 </p>
+
+<br />
+
+<h3>Observing SSH (Secure Shell) Traffic</h3>
+
+<p>
+  <ul>
+    <li>In Windows Powershell inside VM-1, type in <b>ssh VM-2@[VM-2's Private IP]</b> then hit Enter, enter in "Yes" and it will ask for the password for VM-2</li>
+    <li>NOTES: Since we are accessing the Terminal of VM-2 (essentailly Linux's version of a command prompt) it does not display input/dots when typing a password, but do know it is registering input when typing</li>
+    <li>once logged in, you will be connected to the Terminal of VM-2. You can exit by entering the command <b>exit</b></li>
+    <ul>
+    <br>
+      <img width="600" alt="ssh login VM-2" src="https://github.com/landonbmartin/vm-network/assets/148168629/530c0f50-6b47-40de-823e-c9513219f429">
+    </ul>
+    </br>
+    <li>Typing in commands such as <i>username</i>,<i>pwd</i>, or <i>sudo apt</i> will display traffic on Wireshark, you can filter ssh traffic in Wireshark by typing in <b>ssh</b> in the filter bar</li>
+  </ul>
+</p>
+
+<br />
+
+<h3>Observing DNS (Domain Name System) Traffic</h3>
+
+<p>
+  <ul>
+    <li>Filter DNS traffic in Wireshark by entering <b>dns</b> in the filter bar</li>
+    <li>In Powershell, type in <b>nslookup</b> and a website such as google.com</li>
+  </ul>
+</p>
+
+<br />
+
+<h3>Observing RDP (Remote Desktop Protocol) Traffic</h3>
+
+<p>
+  <ul>
+    <li>Filter RDP traffic in Wireshark by entering <b>dns</b> in the filter bar and you will notice non-stop traffic</li>
+    <li>This is because the RDP is constantly showing you a live stream from one computer to another, therefore, traffic is always being transmitted</li>
+  </ul>
+</p>
+
+<br />
+
+<h2>Clean up</h2>
+
+<p>
+  <ul>
+    <li>Log off Remote Desktop Connection</li>
+    <li>It is advised to delete your Resourse Group and VMs after finishing any project with them to prevent future costs. Deletion of assets on Azure require verification by entering the name of the asset. Also to note, the Resource Group <b>NetworkWatcherRG</b> is created when starting NSGs for Virtual Machines and requires its own deletion</li>
+    <ul>
+    <br>
+      <img width="1000" alt="Azure Clean Up" src="https://github.com/landonbmartin/vm-network/assets/148168629/d087720d-bb6a-4a8e-b7bd-8ed3e9b8840c">
+    </ul>
+    </br>
+  </ul>
+</p>
+
+<br />
