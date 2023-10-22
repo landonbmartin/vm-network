@@ -135,7 +135,7 @@ This tutorial outlines how to set up a Virtual Machine Network in Microsoft Azur
 
 <p>
   <ul>
-    <li>Fist, download <a href="https://www.wireshark.org/download.html">Wireshark</a> in your Windows VM. Downloads may be <i>slow</i> depending on your VM's CPU</li>
+    <li>First, download <a href="https://www.wireshark.org/download.html">Wireshark</a> in your Windows VM. Downloads may be <i>slow</i> depending on your VM's CPU</li>
     <ul>
     <br>
       <img width="800" alt="Download Wireshark" src="https://github.com/landonbmartin/vm-network/assets/148168629/e42476bd-f4a7-42a5-8943-169b25806f0a">
