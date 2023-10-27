@@ -11,7 +11,7 @@ This tutorial outlines how to set up a Virtual Machine Network in Microsoft Azur
 
 <ul>
   <li>Microsoft Azure (Virtual Machines/Compute)</li>
-  <li>Microsoft Remote Desktop</li>
+  <li>Remote Desktop</li>
   <li>Powershell</li>
 </ul>
 
