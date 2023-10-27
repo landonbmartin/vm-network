@@ -15,7 +15,6 @@ This tutorial outlines how to set up a Virtual Machine Network in Microsoft Azur
 </ul>
 
 </br>
-<br>
 
 <h2>Operating Systems Used</h2>
 <ul>
@@ -34,6 +33,8 @@ This tutorial outlines how to set up a Virtual Machine Network in Microsoft Azur
   </ul>
   <li>(OPTIONAL): Use a notepad for typing down username and password information throughout the exercise</li>
 </ol>
+
+<br>
 
 <h2>Installation Steps</h2>
 
